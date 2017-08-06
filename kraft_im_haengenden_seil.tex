@@ -1,4 +1,5 @@
 \documentclass[twocolumn,aps]{revtex4}
+\usepackage{amsmath}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
@@ -103,17 +104,18 @@ Satzes von Pythagoras, der auf unser Problem angewandt als
 geschrieben werden kann. Daraus folgt
 \begin{equation}
  \mathrm{d}s = \sqrt{1+y'(x)^2}\mathrm{d}x\,,
+ \label{eq:ds}
 \end{equation}
 so dass wir mit (\ref{eq:zweite_ableitung}) die Differentialgleichung
 der Seilkurve
 \begin{equation}
  ay''(x)-\sqrt{1+y'(x)^2} = 0
- \label{eq:seilkurve}
+ \label{eq:seilkurve_dgl}
 \end{equation}
 erhalten.
 
 \section{Lösung der Seilkurvengleichung}
-Die Differentialgleichung (\ref{eq:seilkurve}) lässt sich mit Hilfe der
+Die Differentialgleichung (\ref{eq:seilkurve_dgl}) lässt sich mit Hilfe der
 Trennung der Variablen lösen, wenn man die neue Variable $u(x) = y'(x)$
 einführt. Durch Trennung der Variablen erhält man
 \begin{equation}
@@ -127,6 +129,7 @@ wobei arsinh den inversen hyperbolischen Sinus bedeutet. Auflösen nach der
 Variable $u$ liefert
 \begin{equation}
  u = \sinh\left(\frac{x}{a}\right)\,.
+ \label{eq:seilkurve_u}
 \end{equation}
 Eine potentiell auftretende Integrationskonstante haben wir hier zu Null
 gesetzt und damit festgelegt, dass sich der tiefste Punkt des Seils am
@@ -135,10 +138,67 @@ Ort $x=0$ befindet.
 Eine weitere Integration nach $x$ liefert schließlich die Seilkurve
 \begin{equation}
  y= a\cosh\left(\frac{x}{a}\right)\,.
+ \label{eq:seilkurve}
 \end{equation}
 Hier haben wir wiederum die Integrationskonstante zu Null gesetzt und
 damit den tiefsten Punkt des Seils nach $y=0$ gelegt.
 
+\section{Krümmungsradius}
+Der Krümmungsradius $r$ einer durch die Funktion $y(x)$ beschriebenden
+Kurve ist durch
+\begin{equation}
+ r(x) = \left\vert\frac{(1+y'(x)^2)^{3/2}}{y''(x)}\right\vert
+\end{equation}
+gegeben. Unter Verwendung der Ableitung der Seilkurve
+(\ref{eq:seilkurve_u}) und mit der Beziehung
+\begin{equation}
+ \cosh(x)^2+\sinh(x)^2 = 1
+\end{equation}
+ergibt sich
+\begin{equation}
+ r(x) = a\cosh^2\left(\frac{x}{a}\right)\,.
+\end{equation}
+Der Parameter $a$ entspricht somit dem Krümmungsradius der Seilkurve
+bei $x=0$, also am tiefsten Punkt. Dort ist der Krümmungsradius
+minimal, die Krümmung also maximal.
 
+Auch wenn sich der Krümmungsradius am tiefsten Punkt gut zur
+Parametrisierung der Seilkurve eignet, wird er selten in
+Problemstellungen vorgegeben sein. Wir wollen ihn daher durch
+geeignete Parameter ausdrücken und betrachten dazu speziell ein
+Seil, dass zwischen den Orten $x=\pm w/2$ auf der gleichen Höhe
+eingespannt ist. Der Seildurchgang $h$ ergibt sich in diesem Fall mit
+Hilfe der Seilkurve (\ref{eq:seilkurve}) zu
+\begin{equation}
+ h = y(w/2)-y(0) = a\left[\cosh\left(\frac{w}{2a}\right)-1\right]\,.
+ \label{eq:durchhang}
+\end{equation}
+
+Ferner benötigen wir die Länge des Seils, die gleich $L$ sein soll.
+Wir kennen nach (\ref{eq:ds}) den Zusammenhang zwischen der Länge
+eines kleinen Seilstücks und dem Differential $\mathrm{d}x$, so dass
+wir durch Auf\/integration die Forderung
+\begin{equation}
+ L \overset{!}{=} \int_{-w/2}^{w/2}\mathrm{d}x\sqrt{1+y'(x)^2}
+\end{equation}
+erhalten. Durch Einsetzen der Ableitung der Seilkurve
+(\ref{eq:seilkurve_u}) und Ausführung der Integration finden wir
+\begin{equation}
+ L = 2a\sinh\left(\frac{w}{2a}\right)
+\end{equation}
+oder
+\begin{equation}
+ \cosh\left(\frac{w}{2a}\right) = \sqrt{1+\left(\frac{L}{2a}\right)^2}\,.
+\end{equation}
+Mit (\ref{eq:durchhang}) ergibt sich der Seildurchhang zu
+\begin{equation}
+ h = \sqrt{a^2+\frac{L^2}{4}}-a\,.
+\end{equation}
+Auf\/lösen nach $a$ erlaubt es, den Krümmungsradius am tiefsten
+Seilpunkt durch die Seillänge $L$ und den Seildurchhang $h$ gemäß
+\begin{equation}
+ a = \frac{h}{2}\left[\left(\frac{L}{2h}\right)^2-1\right]
+\end{equation}
+auszudrücken.
 
 \end{document}
