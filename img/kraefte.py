@@ -68,5 +68,9 @@ c.text(2.6+l*cos(radians(phi))+fx+0.1,
 c.stroke(path.line(2.6, -0.1, 2.6, 0.1))
 c.stroke(path.line(2.6+l*cos(radians(phi)), -0.1, 2.6+l*cos(radians(phi)), 0.1))
 c.text(2.6+0.5*l*cos(radians(phi)), 0.2, '$\mathrm{d}x$', [text.halign.center])
+c.stroke(path.line(2.6+0.5*l*cos(radians(phi)), -0.1,
+                   2.6+0.5*l*cos(radians(phi)), 0))
+c.text(2.6+0.5*l*cos(radians(phi)), -0.2, '$x_0$',
+       [text.halign.center, text.valign.top])
 
 c.writePDFfile()
