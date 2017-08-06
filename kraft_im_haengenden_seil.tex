@@ -10,23 +10,42 @@
 \author{Gert-Ludwig Ingold}
 \affiliation{Institut für Physik, Universität Augsburg, 86135 Augsburg}
 \begin{abstract}
-  In diesen Notizen soll die maximale Kraft hergeleitet werden, die in einem
-  undehnbaren hängenden Seil auftritt. Dazu wird zunächst mit Hilfe der 
-  Betrachtung der auf ein kurzes Seilstück wirkenden Kräfte der Seilverlauf,
-  die sogenannte Kettenlinie, hergeleitet. Anschließend lässt sich die maximale
-  Seilkraft bestimmen.
+ In diesen Notizen soll die maximale Kraft hergeleitet werden, die in
+ einem undehnbaren hängenden Seil auftritt. Dazu wird zunächst
+ mit Hilfe der Betrachtung der auf ein kurzes Seilstück
+ wirkenden Kräfte der Seilverlauf, die sogenannte Kettenlinie,
+ hergeleitet. Anschließend lässt sich die maximale Seilkraft
+ bestimmen.
 \end{abstract}
 \maketitle
 
-\section{Herleitung der Kettenlinie}
-Zunächst wird der Seilverlauf eines undehnbaren, im Gravitationsfeld hängenden
-Seils, die sogenannte Kettenlinie, berechnet. Es handelt sich dabei um ein
-Variationsproblem mit Nebenbedingungen, in dem die potentielle Energie des
-Seils bei vorgegebener Seillänge $L$ minimiert werden soll. Dies kann mit 
-Hilfe von Lagrange-Multiplikatoren und der zugehörigen Euler-Lagrange-Gleichung
-erfolgen. Da wir uns aber in erster Linie für die Seilkräfte interessieren,
-ist es angebracht, die Kettenlinie stattdessen durch eine Kräftebetrachtung
-herzuleiten.
+\section{Kräftegleichgewicht an einem Seilstück}
+Zunächst wird der Seilverlauf eines undehnbaren, im Gravitationsfeld
+hängenden Seils, die sogenannte Kettenlinie, berechnet. Es handelt
+sich dabei um ein Variationsproblem mit Nebenbedingungen, in dem die
+potentielle Energie des Seils bei vorgegebener Seillänge $L$ minimiert
+werden soll. Dies kann mit Hilfe von Lagrange-Multiplikatoren und der
+zugehörigen Euler-Lagrange-Gleichung erfolgen. Da wir uns aber in
+erster Linie für die Seilkräfte interessieren, ist es angebracht, die
+Kettenlinie stattdessen durch eine Kräftebetrachtung herzuleiten.
+
+Wir beginnen mit der Betrachtung der in Abb.~\ref{fig:kraefte}
+dargestellten Kräfte auf ein kurzes Seilstück der Länge $\mathrm{d}s$,
+das sich am Ort $x_0$ befindet. Auf dieses Seilstück mit der
+längenbezogenen Dichte $\mu$ wirkt die Gewichtskraft, die in die
+negative $y$-Richtung zeigt und den Betrag
+\begin{equation}
+ G = \mu g\mathrm{d}s
+\end{equation}
+besitzt. Dabei ist $g$ die Erdbeschleunigung. Zudem üben die links und
+rechts benachbarten Seilstücke die Kräfte $\vec F^{(-)}$ bzw.\ $\vec
+F^{(+)}$ aus. Da das Seil keine Querkräfte zulassen soll, wirken diese
+Kräfte in Richtung der jeweiligen Seilstücke. Im Gleichgewicht gilt
+somit
+\begin{equation}
+ \vec F^{(+)}+\vec F^{(-)}+\vec G = 0\,.
+ \label{eq:kraftgleichgewicht}
+\end{equation}
 
 \begin{figure}
  \includegraphics[width=0.8\columnwidth]{kraefte}
@@ -35,5 +54,62 @@ herzuleiten.
 	  und $\vec F^{(+)}$ von links bzw.\ von rechts. Die grau
 	  dargestellten Vektoren zerlegen die Seilkräfte in die
 	  horizontalen und vertikalen Komponenten.}
+ \label{fig:kraefte}
 \end{figure}
+
+Diese Gleichgewichtsbedingung wird nun in ihre horizontalen und
+vertikalen Komponenten zerlegt, wobei die Zerlegung der Seilkräfte in
+Abb.~\ref{fig:kraefte} durch die grauen Vektoren dargestellt ist. Da
+die Gewichtskraft keine horizontale Komponente besitzt, folgt
+\begin{equation}
+ F^{(+)}_x = -F^{(-)}_x = \mu g a\,.
+ \label{eq:kraftgleichgewicht_x}
+\end{equation}
+Diese Kraftkomponente ist entlang des gesamten Seils konstant und wird
+von der Aufhängung aufgebracht. Es ist günstig, die horizontale
+Kraftkomponente in der angegebenen Form zu schreiben, wobei $a$ eine
+Konstante mit der Dimension einer Länge ist, deren Bedeutung später
+noch klar werden wird.
+
+Beschreibt man die Seilkurve durch eine noch zu bestimmende Funktion
+$y(x)$, so folgt aus der Tatsache, dass die Seilkräfte nur entlang des
+Seils wirken können, dass das Verhältnis der Seilkraftkomponenten
+gemäß
+\begin{equation}
+ \frac{F_y}{F_x} = \frac{\mathrm{d}y}{\mathrm{d}x} = y'(x)\,,
+\end{equation}
+durch die Ableitung der Seilkurve gegeben ist. Zur Vereinfachung der
+Notation soll ein Strich die Ableitung nach der Koordinate $x$
+bedeuten. Aus (\ref{eq:kraftgleichgewicht}) erhält man somit zusammen
+mit (\ref{eq:kraftgleichgewicht_x}) für die vertikalen
+Kraftkomponenten
+\begin{equation}
+ \mu ga\left[y'(x_0+\mathrm{d}x/2)-y'(x_0-\mathrm{d}x/2)\right]-\mu
+ g\mathrm{d}s = 0\,.
+\end{equation}
+Hier sind wir von dem bisher verwendeten speziellen Ort $x_0$ des
+Seilstücks zu einem beliebigen Ort $x$ übergegangen.
+
+Dividiert man durch $\mathrm{d}x$, so wird aus der Differenz der
+Ableitungen von $y(x)$ eine zweite Ableitung
+\begin{equation}
+ ay''(x)-\frac{\mathrm{d}s}{\mathrm{d}x} = 0\,.
+ \label{eq:zweite_ableitung}
+\end{equation}
+Den Zusammenhang zwischen den Differentialen erhält man mit Hilfe des
+Satzes von Pythagoras, der auf unser Problem angewandt als
+\begin{equation}
+ \mathrm{d}s^2 = \mathrm{d}x^2+\mathrm{d}y^2
+\end{equation}
+geschrieben werden kann. Daraus folgt
+\begin{equation}
+ \mathrm{d}s = \sqrt{1+y'(x)^2}\mathrm{d}x\,,
+\end{equation}
+so dass wir mit (\ref{eq:zweite_ableitung}) die Gleichung einer
+Kettenlinie
+\begin{equation}
+ ay''(x)-\sqrt{1+y'(x)^2} = 0
+\end{equation}
+erhalten.
+
 \end{document}
