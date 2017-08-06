@@ -108,9 +108,37 @@ so dass wir mit (\ref{eq:zweite_ableitung}) die Differentialgleichung
 der Seilkurve
 \begin{equation}
  ay''(x)-\sqrt{1+y'(x)^2} = 0
+ \label{eq:seilkurve}
 \end{equation}
 erhalten.
 
 \section{Lösung der Seilkurvengleichung}
+Die Differentialgleichung (\ref{eq:seilkurve}) lässt sich mit Hilfe der
+Trennung der Variablen lösen, wenn man die neue Variable $u(x) = y'(x)$
+einführt. Durch Trennung der Variablen erhält man
+\begin{equation}
+ \frac{\mathrm{d}u}{\sqrt{1+u^2}} = \frac{\mathrm{d}x}{a}\,.
+\end{equation}
+Die Integration dieser Gleichung liefert mit
+\begin{equation}
+ \int\mathrm{d}u\frac{1}{\sqrt{1+u^2}} = \mathrm{arsinh}(u)\,,
+\end{equation}
+wobei arsinh den inversen hyperbolischen Sinus bedeutet. Auflösen nach der
+Variable $u$ liefert
+\begin{equation}
+ u = \sinh\left(\frac{x}{a}\right)\,.
+\end{equation}
+Eine potentiell auftretende Integrationskonstante haben wir hier zu Null
+gesetzt und damit festgelegt, dass sich der tiefste Punkt des Seils am
+Ort $x=0$ befindet.
+
+Eine weitere Integration nach $x$ liefert schließlich die Seilkurve
+\begin{equation}
+ y= a\cosh\left(\frac{x}{a}\right)\,.
+\end{equation}
+Hier haben wir wiederum die Integrationskonstante zu Null gesetzt und
+damit den tiefsten Punkt des Seils nach $y=0$ gelegt.
+
+
 
 \end{document}
