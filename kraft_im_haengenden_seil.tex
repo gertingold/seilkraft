@@ -1,4 +1,4 @@
-\documentclass[twocolumn,aps]{revtex4}
+\documentclass[twocolumn,nobalancelastpage]{revtex4}
 \usepackage{amsmath}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -20,14 +20,16 @@
 \maketitle
 
 \section{Kräftegleichgewicht an einem Seilstück}
+\label{sec:kraeftegleichgewicht}
 Zunächst wird der Seilkurve eines undehnbaren, im Gravitationsfeld
-hängenden Seils, berechnet. Es handelt sich dabei um ein
+hängenden Seils berechnet. Es handelt sich dabei um ein
 Variationsproblem mit Nebenbedingungen, in dem die potentielle Energie
 des Seils bei vorgegebener Seillänge $L$ minimiert werden soll. Dies
 kann mit Hilfe von Lagrange-Multiplikatoren und der zugehörigen
 Euler-Lagrange-Gleichung erfolgen.  Da wir uns aber in erster Linie
 für die Seilkräfte interessieren, ist es angebracht, die Seilkurve
-stattdessen durch eine Kräftebetrachtung herzuleiten.
+stattdessen durch eine Kräftebetrachtung herzuleiten. Dies geschieht
+in diesem und dem folgenden Abschnitt.
 
 Wir beginnen mit der Betrachtung der in Abb.~\ref{fig:kraefte}
 dargestellten Kräfte auf ein kurzes Seilstück der Länge $\mathrm{d}s$,
@@ -77,6 +79,7 @@ Seils wirken können, dass das Verhältnis der Seilkraftkomponenten
 gemäß
 \begin{equation}
  \frac{F_y}{F_x} = \frac{\mathrm{d}y}{\mathrm{d}x} = y'(x)\,,
+ \label{eq:kraftverhaeltnis}
 \end{equation}
 durch die Ableitung der Seilkurve gegeben ist. Zur Vereinfachung der
 Notation soll ein Strich die Ableitung nach der Koordinate $x$
@@ -96,8 +99,9 @@ Ableitungen von $y(x)$ eine zweite Ableitung
  ay''(x)-\frac{\mathrm{d}s}{\mathrm{d}x} = 0\,.
  \label{eq:zweite_ableitung}
 \end{equation}
-Den Zusammenhang zwischen den Differentialen erhält man mit Hilfe des
-Satzes von Pythagoras, der auf unser Problem angewandt als
+Den Zusammenhang zwischen den Differentialen $\mathrm{d}s$ und
+$\mathrm{d}x$ erhält man mit Hilfe des Satzes von Pythagoras, der
+auf unser Problem angewandt als
 \begin{equation}
  \mathrm{d}s^2 = \mathrm{d}x^2+\mathrm{d}y^2
 \end{equation}
@@ -125,8 +129,8 @@ Die Integration dieser Gleichung liefert mit
 \begin{equation}
  \int\mathrm{d}u\frac{1}{\sqrt{1+u^2}} = \mathrm{arsinh}(u)\,,
 \end{equation}
-wobei arsinh den inversen hyperbolischen Sinus bedeutet. Auflösen nach der
-Variable $u$ liefert
+wobei arsinh den inversen hyperbolischen Sinus bedeutet, nach
+Auf\/lösen nach der Variablen $u$ 
 \begin{equation}
  u = \sinh\left(\frac{x}{a}\right)\,.
  \label{eq:seilkurve_u}
@@ -144,7 +148,7 @@ Hier haben wir wiederum die Integrationskonstante zu Null gesetzt und
 damit den tiefsten Punkt des Seils nach $y=0$ gelegt.
 
 \section{Krümmungsradius}
-Der Krümmungsradius $r$ einer durch die Funktion $y(x)$ beschriebenden
+Der Krümmungsradius $r$ einer durch die Funktion $y(x)$ beschriebenen
 Kurve ist durch
 \begin{equation}
  r(x) = \left\vert\frac{(1+y'(x)^2)^{3/2}}{y''(x)}\right\vert
@@ -153,6 +157,7 @@ gegeben. Unter Verwendung der Ableitung der Seilkurve
 (\ref{eq:seilkurve_u}) und mit der Beziehung
 \begin{equation}
  \cosh(x)^2+\sinh(x)^2 = 1
+ \label{eq:hyp2summe}
 \end{equation}
 ergibt sich
 \begin{equation}
@@ -166,8 +171,8 @@ Auch wenn sich der Krümmungsradius am tiefsten Punkt gut zur
 Parametrisierung der Seilkurve eignet, wird er selten in
 Problemstellungen vorgegeben sein. Wir wollen ihn daher durch
 geeignete Parameter ausdrücken und betrachten dazu speziell ein
-Seil, dass zwischen den Orten $x=\pm w/2$ auf der gleichen Höhe
-eingespannt ist. Der Seildurchgang $h$ ergibt sich in diesem Fall mit
+Seil, das zwischen den Orten $x=\pm w/2$ auf der gleichen Höhe
+eingespannt ist. Der Seildurchhang $h$ ergibt sich in diesem Fall mit
 Hilfe der Seilkurve (\ref{eq:seilkurve}) zu
 \begin{equation}
  h = y(w/2)-y(0) = a\left[\cosh\left(\frac{w}{2a}\right)-1\right]\,.
@@ -176,8 +181,8 @@ Hilfe der Seilkurve (\ref{eq:seilkurve}) zu
 
 Ferner benötigen wir die Länge des Seils, die gleich $L$ sein soll.
 Wir kennen nach (\ref{eq:ds}) den Zusammenhang zwischen der Länge
-eines kleinen Seilstücks und dem Differential $\mathrm{d}x$, so dass
-wir durch Auf\/integration die Forderung
+eines kleinen Seilstücks $\mathrm{d}s$ und dem Differential
+$\mathrm{d}x$, so dass wir durch Auf\/integration die Forderung
 \begin{equation}
  L \overset{!}{=} \int_{-w/2}^{w/2}\mathrm{d}x\sqrt{1+y'(x)^2}
 \end{equation}
@@ -186,11 +191,11 @@ erhalten. Durch Einsetzen der Ableitung der Seilkurve
 \begin{equation}
  L = 2a\sinh\left(\frac{w}{2a}\right)
 \end{equation}
-oder
+oder mit Hilfe von (\ref{eq:hyp2summe})
 \begin{equation}
  \cosh\left(\frac{w}{2a}\right) = \sqrt{1+\left(\frac{L}{2a}\right)^2}\,.
 \end{equation}
-Mit (\ref{eq:durchhang}) ergibt sich der Seildurchhang zu
+Mit (\ref{eq:durchhang}) ergibt sich dann der Seildurchhang zu
 \begin{equation}
  h = \sqrt{a^2+\frac{L^2}{4}}-a\,.
 \end{equation}
@@ -198,7 +203,40 @@ Auf\/lösen nach $a$ erlaubt es, den Krümmungsradius am tiefsten
 Seilpunkt durch die Seillänge $L$ und den Seildurchhang $h$ gemäß
 \begin{equation}
  a = \frac{h}{2}\left[\left(\frac{L}{2h}\right)^2-1\right]
+ \label{eq:zusammenhang_a_l_h}
 \end{equation}
 auszudrücken.
+
+\section{Maximale Kraft im Seil}
+Die im Seil wirkende Kraft können wir nun leicht mit Hilfe der
+Ergebnisse aus Abschnit~\ref{sec:kraeftegleichgewicht} berechnen
+und mit den Ergebnissen aus dem vorigen Abschnitt durch die Seillänge
+und den Seildurchhang ausdrücken.
+
+Der Betrag der Kraft am Ort $x$ im Seil ist mit
+(\ref{eq:kraftgleichgewicht_x}) und (\ref{eq:kraftverhaeltnis}) durch
+\begin{equation}
+ \begin{aligned}
+  F &= \sqrt{F_x^2+F_y^2}\\
+    &= \mu ga\sqrt{1+y'(x)^2}
+ \end{aligned}
+\end{equation}
+gegeben. Damit ist bereits klar, wo die Kraft im Seil am größten ist,
+nämlich am Rand. Dort ist gemäß (\ref{eq:seilkurve_u}) die Ableitung
+$y'(x)=u(x)$ am größten. Setzt man den Ausdruck (\ref{eq:seilkurve_u})
+an der Stelle $x=w/2$ für die Ableitung der Seilkurve ein, so findet
+man mit Hilfe des Ergebnisses für den Seildurchhang
+(\ref{eq:durchhang}) die maximale Kraft
+\begin{equation}
+ F_\text{max} = \mu g(h+a)
+\end{equation}
+Um dieses Ergebnis als Funktion der Seillänge $L$ und des
+Seildurchhangs $h$ auszudrücken, verwendet man
+(\ref{eq:zusammenhang_a_l_h}) und findet damit schließlich
+\begin{equation}
+ F_\text{max} = \frac{\mu g}{2}\left[h+\frac{L^2}{4h}\right]\,.
+\end{equation}
+Wie man am zweiten Term sieht, kann diese Kraft bei langen Seilen
+mit geringem Durchhang sehr groß werden.
 
 \end{document}
